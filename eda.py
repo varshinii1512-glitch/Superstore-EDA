@@ -18,5 +18,12 @@ print(df.isnull().sum())
 print("\nDuplicate Rows:", df.duplicated().sum())
 print("\nSales & Profit Correlation:")
 print(df[["Sales", "Profit"]].corr())
+print("\nLoss Making Transactions:")
+print(df[df["Profit"] < 0].shape[0])
+print("\nAverage Profit by Region:")
+print(df.groupby("Region")["Profit"].mean().sort_values(ascending=False))
+print("\nDiscount vs Profit Correlation:")
+print(df[["Discount", "Profit"]].corr())
+
 
 
